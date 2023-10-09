@@ -1,0 +1,26 @@
+---
+- name: "Configure Server"
+  hosts: "localhost"
+
+  tasks:  
+  # Pre-setup
+    - name: "Install requirements"
+      ansible.builtin.command:
+        cmd: "ansible-galaxy collection install -r requirements.yml"
+
+    - name: "Deploy tailscale"
+      ansible.builtin.import_tasks:
+        file: "tasks/tailscale.yml"
+
+    - name: "Deploy ansible-pull"
+      ansible.builtin.import_tasks:
+        file: "tasks/ansible_pull.yml"
+
+    - name: "Deploy podman"
+      ansible.builtin.import_tasks:
+        file: "tasks/podman.yml"
+
+  # Podman Containers
+    - name: "Deploy Containers"
+      ansible.builtin.import_tasks:
+        file: "tasks/containers.yml"
