@@ -6,5 +6,5 @@
 5) Set up auto updates for rpm-ostree and podman
 
 # References
-<https://blog.while-true-do.io/iot-fedora-ansible-podman>
+<https://blog.while-true-do.io/iot-fedora-ansible-podman>\
 <https://blog.aleksic.dev/using-ansible-and-nomad-for-a-homelab-part-1>
